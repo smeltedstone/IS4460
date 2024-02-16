@@ -1,0 +1,53 @@
+<head>
+    <title>Movie List</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .movie-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .movie {
+            text-align: center;
+            margin: 20px;
+        }
+        .movie img {
+            display: block;
+            margin: 0 auto 10px; /* Center the image */
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Movie List</h1>
+        <!-- Link to Movie-add page -->
+        <nav>
+            <a href="movie-add.html">Add New Movie</a>
+        </nav>
+    </header>
+    <div class="movie-container">
+        <!-- Movie 1 -->
+        <div class="movie">
+            <a href="movie-details.html">
+                <img src="../images/movie1.jpg" alt="Toy Story">
+                <p>Toy Story</p>
+            </a>
+        </div>
+        <!-- Movie 2 -->
+        <div class="movie">
+            <a href="movie-details.html">
+                <img src="../images/movie2.jpg" alt="Pulp Fiction">
+                <p>Pulp Fiction</p>
+            </a>
+        </div>
+        <!-- Movie 3 -->
+        <div class="movie">
+            <a href="movie-details.html">
+                <img src="../images/movie3.jpg" alt="The Secret Life of Walter Mitty">
+                <p>The Secret Life of Walter Mitty</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

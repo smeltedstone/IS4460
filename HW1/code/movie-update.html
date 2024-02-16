@@ -1,0 +1,35 @@
+<head>
+    <title>Update Movie</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Update or Delete Movie</h1>
+    </header>
+        <form action="movie-list.html" method="post">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title">
+            <br>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea>
+            <br>
+            <label for="director">Director:</label>
+            <input type="text" id="director" name="director">
+            <br>
+            <!-- Add input for movie image classpath -->
+            <label for="imagePath">Image Classpath:</label>
+            <input type="text" id="imagePath" name="imagePath">
+            <br>
+            <!-- Add input for YouTube embed link -->
+            <label for="trailerLink">YouTube Trailer Embed Link:</label>
+            <input type="text" id="trailerLink" name="trailerLink">
+            <br>
+            <input type="submit" value="Update Movie">
+        </form>
+        <form action="movie-list.html" method="post">
+            <!-- Hidden input field to trigger movie deletion -->
+            <input type="hidden" name="delete_movie" value="true">
+            <input type="submit" value="Delete Movie">
+        </form>
+</body>
+</html>
