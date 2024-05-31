@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie List</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .movie-image {
+            width: 100px;
+            height: auto;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+        .movie-item {
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .add-movie-link {
+            margin-bottom: 20px;
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .page-title {
+            margin-bottom: 30px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Page Title -->
+        <h2 class="page-title">Movie List</h2>
+        
+        <a href="{% url 'movie_add' %}" class="add-movie-link">Add a new movie</a>
+        <div class="list-group">
+            {% for movie in movies %}
+            <div class="list-group-item movie-item d-flex">
+                <img src="{{ movie.image_url }}" alt="{{ movie.title }}" class="movie-image">
+                <div>
+                    <h5 class="mb-1">{{ movie.title }}</h5>
+                    <small>
+                        <a href="{% url 'movie_details' movie.id %}">Details</a> |
+                        <a href="{% url 'movie_update' movie.id %}">Edit</a>
+                    </small>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
